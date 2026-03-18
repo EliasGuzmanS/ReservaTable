@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statusBox.style.color = '#007A33';
             statusBox.textContent = 'Guardando reserva...';
 
-            if(window.db && window.firebaseConfig.apiKey !== "ENTRA_TU_API_KEY_AQUI") {
+            if(window.db && window.firebaseConfig.apiKey !== "") {
                 window.db.collection("reservations").add(reservationData)
                 .then(() => {
                     statusBox.textContent = '¡Reserva confirmada exitosamente!';
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Admin table logic
     const reservationsBody = document.getElementById('reservationsBody');
-    if (reservationsBody && window.db && window.firebaseConfig.apiKey !== "ENTRA_TU_API_KEY_AQUI") {
+    if (reservationsBody && window.db && window.firebaseConfig.apiKey !== "") {
         window.db.collection("reservations").orderBy("createdAt", "desc").onSnapshot((snapshot) => {
             reservationsBody.innerHTML = '';
             if(snapshot.empty) {
