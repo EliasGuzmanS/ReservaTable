@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-dashboard">
+    <h2>Panel de Administración - Reservas</h2>
+    <div class="reservations-list">
+        <table id="reservationsTable">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Mesa</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Personas</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="reservationsBody">
+                <!-- Se llenará dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
